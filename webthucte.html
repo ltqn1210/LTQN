@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <style>
+        dt {
+            font-weight: bold;
+            background-color: brown;
+            color: black;
+        }
+        
+        tr {
+            background-color: coral;
+            color: black;
+            text-align: center;
+        }
+    </style>
+
+
+
+    <script>
+        function placeorderclick() {
+
+            document.getElementById("ordersummary").style.display = "block";
+
+
+            Uname = document.getElementById("txtName");
+            phone = document.getElementById("txtMobie");
+            rice = document.getElementById("optRice");
+            bread = document.getElementById("optBread");
+            burger = document.getElementById("optBurger");
+            soup = document.getElementById("optSoup");
+
+            var mcost = 0;
+            var acost = 0;
+            var mname = " ";
+            var aname = " ";
+
+            if (rice.checked) {
+                mcost = 120;
+                mname = rice.value;
+            }
+
+            if (bread.checked) {
+                mcost = 100;
+                mname = bread.value;
+            }
+
+            if (burger.checked) {
+                acost = 60;
+                mcost += acost;
+                aname += burger.value + "<br>";
+            }
+
+            if (soup.checked) {
+                acost = 60;
+                mcost += acost;
+                aname += soup.value;
+            }
+
+
+            document.getElementById("lbName").innerHTML = Uname.value;
+            document.getElementById("lbMobie").innerHTML = phone.value;
+            document.getElementById("lbMeal").innerHTML = mname;
+            document.getElementById("lbadd").innerHTML = aname;
+            document.getElementById("total").innerHTML = mcost;
+        }
+    </script>
+
+</head>
+
+<body>
+    <div>
+        <font size="6">
+            <table width="800" border="2" cellspacing="4" cellpadding="4" align="center" id="table">
+                <tr>
+                    <td>
+                        <img src="https://images.foody.vn/res/g67/662372/prof/s576x330/foody-upload-api-foody-mobile-4-jpg-180705093533.jpg">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">Customer details: </td>
+                </tr>
+                <tr>
+                    <td>Name: </td>
+                    <td><input type="text" id="txtName"></td>
+                </tr>
+                <tr>
+                    <td>Phone: </td>
+                    <td><input type="text" id="txtMobie"></td>
+                </tr>
+                <tr>
+                    <td>Select a meal: </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="https://caresspet.com/wp-content/uploads/2018/10/s16-1024x768.jpg" width="200" height="200">
+                        <br>
+                        <input type="radio" name="meal" id="optRice" value="omgRice">Rice(&#2345;120/-)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/processed-food700-350-e6d0f0f.jpg?quality=90&resize=385%2C350" width="200" height="200">
+                        <br>
+                        <input type="radio" name="meal" id="optBread" value="omgBread">Bread(&#2345;100/-)
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        Select Ad-on's:
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="https://caresspet.com/wp-content/uploads/2018/10/s15-1024x640.jpg" width="200" height="200">
+                        <br>
+                        <input type="checkbox" id="optBurger" value="SmallBurger">SmallBurger(&#2345;60/-)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="https://i.ytimg.com/vi/o91gT73mQhg/maxresdefault.jpg" width="200" height="200">
+                        <br>
+                        <input type="checkbox" id="optSoup" value="SmallSoup">SmallSoup(&#2345;60/-)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" value="Place order" onclick="placeorderclick()">
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <dl id="ordersummary" style="display: none;">
+                <h2>Order Summary</h2>
+                <dt>Customer name: </dt>
+                <dd id="lbName"></dd>
+                <dt>Phone: </dt>
+                <dd id="lbMobie"></dd>
+                <dt>Meal: </dt>
+                <dd id="lbMeal"></dd>
+                <dt>Add on's: </dt>
+                <dd id="lbadd"></dd>
+                <dt>Total bill amount: </dt>
+                <dd id="total"></dd>
+            </dl>
+            <br>
+            <input type="button" value="Print bill" onclick="window.print()">
+    </div>
+</body>
+
+</html>
