@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>Pracitce2</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        #banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), #009688), url(banner.jpg);
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+        
+        .logo {
+            width: 140px;
+            left: 10%;
+            position: absolute;
+            top: 4%;
+        }
+        
+        .banner-text {
+            text-align: center;
+            color: white;
+            padding-top: 180px;
+        }
+        
+        .banner-text h1 {
+            font-size: 130px;
+            font-family: 'Kaushan Script', cursive;
+        }
+        
+        .banner-text p {
+            font-size: 20px;
+            font-style: italic;
+        }
+        
+        .banner-button {
+            margin: 70px auto 0;
+        }
+        
+        .banner-button a {
+            width: 150px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0 10px;
+            padding: 12px 0;
+            border: .5px solid white;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .banner-button a span {
+            width: 0;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: white;
+            z-index: -1;
+            transition: 0.5s;
+        }
+        
+        .banner-button a:hover span {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="banner">
+        <img src="logo1.png" class="logo">
+        <div class="banner-text">
+            <h1>Hair Studio</h1>
+            <p>Style Your Is Style Life</p>
+            <div class="banner-button">
+                <a href="#"><span></span>Find Out</a>
+                <a href="#"><span></span>Read More</a>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
